@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الكتب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .book {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .toggle-button {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>قائمة الكتب</h1>
+
+<div class="book">
+    <p><strong>رمز الكتاب:</strong> 9770916738-978</p>
+    <p><strong>العنوان:</strong> ألف ليلة وليلة</p>
+    <p><strong>السعر:</strong> 25000 ل.س</p>
+    <span class="toggle-button" onclick="toggleDetails(this)">إظهار التفاصيل</span>
+    <div class="details">
+        <p><strong>الناشر:</strong> دار المعارف</p>
+        <p><strong>تصنيف الكتاب:</strong> قصص شعبية</p>
+        <p><strong>ملخص:</strong> كتاب أسطوري يضم مجموعة من القصص الشعبية من الشرق الأوسط وجنوب آسيا وشمال إفريقيا، تم جمعها خلال العصر الذهبي للإسلام. يتم سرد القصص ضمن إطار قصة مركزية تتضمن الشخصية الرئيسية، شهرزاد، التي تحكي حكايات للملك شهريار لتأجيل إعدامه.</p>
+        <p><strong>أهم ثلاث قصص:</strong> علاء الدين والمصباح السحري، علي بابا والأربعون حرامي، رحلات السندباد.</p>
+    </div>
+</div>
+<div class="book">
+    <p><strong>رمز الكتاب:</strong> 9953891718-978</p>
+    <p><strong>العنوان:</strong> موسم الهجرة إلى الشمال</p>
+    <p><strong>السعر:</strong> 12000 ل.س</p>
+    <span class="toggle-button" onclick="toggleDetails(this)">إظهار التفاصيل</span>
+    <div class="details">
+        <!-- تفاصيل الكتاب هنا -->
+    </div>
+</div>
+
+<div class="book">
+    <p><strong>رمز الكتاب:</strong> 9953451080-978</p>
+    <p><strong>العنوان:</strong> الخبز الحافي</p>
+    <p><strong>السعر:</strong> 10000 ل.س</p>
+    <span class="toggle-button" onclick="toggleDetails(this)">إظهار التفاصيل</span>
+    <div class="details">
+        <!-- تفاصيل الكتاب هنا -->
+    </div>
+</div>
+
+
+<h1>نموذج الطلب</h1>
+
+
+<div id="orderForm">
+    <form id="requestForm" onsubmit="return validateForm()">
+        <label for="fullName">الاسم الكامل:</label>
+        <input type="text" id="fullName" required><br>
+
+        <label for="nationalId">الرقم الوطني:</label>
+        <input type="text" id="nationalId" maxlength="11" required><br>
+
+        <label for="birthDate">تاريخ الولادة:</label>
+        <input type="text" id="birthDate" placeholder="dd-mm-yyyy" required><br>
+
+        <label for="mobile">رقم الموبايل:</label>
+        <input type="text" id="mobile"><br>
+
+        <label for="email">الإيميل:</label>
+        <input type="email" id="email"><br>
+
+        <input type="submit" value="إرسال">
+    </form>
+</div>
+
+
+<footer>
+    <p>&copy; 2023 مكتبتنا. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script>
+function toggleDetails(button) {
+    const details = button.nextElementSibling;
+    if (details.style.display === "none" || details.style.display === "") {
+        details.style.display = "block";
+        button.textContent = "إخفاء التفاصيل";
+    } else {
+        details.style.display = "none";
+        button.textContent = "إظهار التفاصيل";
+    }
+}
+</script>
+
+</body>
+</html>
